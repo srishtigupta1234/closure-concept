@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarWars</title>
+    
+    <style>
+      body{
+        background-color: black;
+        font-family: Arial, sans-serif;
+        color: white;
+        
+      }
+      #image{
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+      }
+      img{
+        height:100%;
+      }
+      .video-bg {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%; 
+        min-height: 100%;
+        z-index: -1; /* Ensure it stays behind other elements */
+      }
+      input{
+        /* border: 2px solid rgb(255, 253, 253);
+        background-color: rgb(254, 252, 252);
+        width: 500px;
+        height:50px;
+        margin-left: 530px;
+        text-align: center;
+        border-radius: 10px;
+        margin-top: -100px;
+        font-weight: 200; */
+        border: none;
+        background-color: #333;
+        width: 500px;
+        height: 50px;
+        margin-left: calc(50% - 250px);
+        text-align: center;
+        border-radius: 25px;
+        margin-top: -20px;
+        font-weight: 200;
+        color: white;
+        font-size: 18px;
+        padding: 0 20px;
+      }
+      input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      input:focus {
+        outline: none;
+      }
+      
+      div p{
+        color: beige;
+      }
+      #results {
+        margin-top: 20px;
+        width: 500px;
+        margin-left: calc(50% - 230px);
+        background-color: #1c1c1c;
+        border-radius: 10px;
+        padding: 10px 0;
+        
+      }
+      #results p {
+        padding: 10px 20px;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        color: white;
+        border-bottom: 1px solid #333;
+      }
+      #results p:last-child {
+        border-bottom: none;
+      }
+    </style>
+</head>
+   <video autoplay muted loop class="video-bg">
+      <source src="https://videos.pexels.com/video-files/2462324/2462324-hd_1280_720_30fps.mp4" type="video/mp4">
+      <!-- Your browser does not support HTML5 video. -->
+    </video>
+    
+    <div id="image"><img src="starwars.png" alt=""></div>
+    <input onInput="debouncing(main,1000)" type="text" id="search" placeholder="Search Characters">
+    <div id="results"></div>
+</body>
+</html>
+<script src="no.js"></script>
+<!-- https://videos.pexels.com/video-files/853828/853828-hd_1920_1080_25fps.mp4 -->

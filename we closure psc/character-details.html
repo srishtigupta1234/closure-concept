@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="characterDetails"></div>
+</body>
+</html>
+<script>
+    var newData = localStorage.getItem("characterDetails")
+    if (newData) {
+    const details = JSON.parse(newData);
+
+    // Display the details on the page
+    document.getElementById('characterDetails').innerHTML = `
+        <h2>${details.name}</h2>
+        <p>Height: ${details.height} cm</p>
+        <p>Mass: ${details.mass} kg</p>
+        <p>Hair Color: ${details.hair_color}</p>
+        <p>Skin Color: ${details.skin_color}</p>
+        <p>Birth Year: ${details.birth_year}</p>
+        <p>Gender: ${details.gender}</p>
+    `;
+} else {
+    // Display a fallback message if no data is found
+    document.getElementById('characterDetails').innerHTML = `<p>No character data found. Please return to the search page.</p>`;
+}
+</script>
